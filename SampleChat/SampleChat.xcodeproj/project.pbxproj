@@ -12,6 +12,7 @@
 		9394DDD12643850400AA19C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9394DDD02643850400AA19C0 /* Assets.xcassets */; };
 		9394DDD42643850400AA19C0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9394DDD32643850400AA19C0 /* Preview Assets.xcassets */; };
 		9394DDDD2643856500AA19C0 /* SendBirdSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 9394DDDC2643856500AA19C0 /* SendBirdSDK */; };
+		9394DDE02643866300AA19C0 /* SendBirdUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9394DDDF2643866300AA19C0 /* SendBirdUIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		9394DDD02643850400AA19C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9394DDD32643850400AA19C0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9394DDD52643850400AA19C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9394DDDF2643866300AA19C0 /* SendBirdUIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SendBirdUIKit.framework; path = ../Carthage/Build/iOS/SendBirdUIKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9394DDE02643866300AA19C0 /* SendBirdUIKit.framework in Frameworks */,
 				9394DDDD2643856500AA19C0 /* SendBirdSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -40,6 +43,7 @@
 			children = (
 				9394DDCB2643850300AA19C0 /* SampleChat */,
 				9394DDCA2643850300AA19C0 /* Products */,
+				9394DDDE2643866300AA19C0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +75,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		9394DDDE2643866300AA19C0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9394DDDF2643866300AA19C0 /* SendBirdUIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -81,6 +93,7 @@
 				9394DDC52643850300AA19C0 /* Sources */,
 				9394DDC62643850300AA19C0 /* Frameworks */,
 				9394DDC72643850300AA19C0 /* Resources */,
+				9394DDE3264386FB00AA19C0 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -141,6 +154,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9394DDE3264386FB00AA19C0 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9394DDC52643850300AA19C0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -191,6 +225,11 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/../Carthage/Build/iOS",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -252,6 +291,11 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/../Carthage/Build/iOS",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
